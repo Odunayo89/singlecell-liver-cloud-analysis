@@ -1,0 +1,365 @@
+    1  pwd
+    2  ls
+    3  mkdir project data results
+    4  cd project
+    5  pwd
+    6  c ..
+    7  c..
+    8  cd ..
+    9  cd data
+   10  pwd
+   11  cd project
+   12  cd:
+   13  pwd
+   14  clear
+   15  cd:
+   16  cd ..
+   17  cd project
+   18  mkdir scripts logs output
+   19  ls
+   20  cd logs
+   21  cd ..
+   22  cd..
+   23  cd project
+   24  mkdir test_folder
+   25  ls
+   26  cd ..
+   27  sudo apt install awscli -y
+   28  sudo apt update
+   29  sudo apt install awscli -y
+   30  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   31  sudo apt install unzip -y
+   32  unzip awscliv2.zip
+   33  sudo ./aws/install
+   34  aws --version
+   35  sudo apt install curl -y
+   36  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   37  sudo apt install unzip -y
+   38  unzip awscliv2.zip
+   39  sudo ./aws/install
+   40  aws --version
+   41  aws configure
+   42  pwd
+   43  cd ..
+   44  cd projects
+   45  cd:
+   46  cd..
+   47  cd projects
+   48  cd project
+   49  ls
+   50  cd ubuntu
+   51  cd project
+   52  ls
+   53  cd
+   54  aws --version
+   55  aws configure
+   56  aws s3 ls
+   57  aws s3 ls s3://adekunle-ec2-data/
+   58  aws s3 cp s3://adekunle-ec2-data/test.txt .
+   59  cat test.txt
+   60  wc -l test.txt
+   61  echo "Processed file" > output.txt
+   62  cat test.txt >> output.txt
+   63  aws s3 cp output.txt s3://adekunle-ec2-data/
+   64  aws s3 ls s3://adekunle-ec2-data/
+   65  ls
+   66  aws s3 ls
+   67  nano test.txt
+   68  ls
+   69  aws --version
+   70  aws s3 ls
+   71  nano test.txt
+   72  aws s3 cp test.txt s3://adekunle-ec2-data/
+   73  aws s3 ls s3://adekunle-ec2-data/
+   74  aws s3 cp s3://adekunle-ec2-data/test.txt .
+   75  aws s3 ls
+   76  nano test.txt
+   77  ls
+   78  nano test.txt
+   79  cat test.txt
+   80  aws s3 cp test.txt s3://adekunle-ec2-data/
+   81  aws s3 ls s3://adekunle-ec2-data/
+   82  ls
+   83  aws s3 cp s3://adekunle-ec2-data/test.txt .
+   84  ls
+   85  cat test.txt
+   86  wc -l test.txt
+   87  cat test.txt >> output.txt
+   88  ls
+   89  ls output.txt
+   90  cat output.txt
+   91  aws s3 cp output.txt s3://adekunle-ec2-data/
+   92  pwd
+   93  ls
+   94  cd project
+   95  mkdir scripts logs output
+   96  ls
+   97  cd ..
+   98  cd scripts
+   99  cd project
+  100  cd scripts
+  101  nano process.sh
+  102  ls
+  103  cd scripts
+  104  nano process.sh
+  105  chmod +x process.sh
+  106  ./process.sh
+  107  cd ..
+  108  cd data
+  109  cd ../results
+  110  cd ../project/scripts
+  111  nano sample.txt
+  112  cat sample.txt
+  113  head sample.txt
+  114  wc -l sample.txt
+  115  cd projects
+  116  ls
+  117  cd project
+  118  cd ls
+  119  cd scripts
+  120  ls
+  121  nano genes.txt
+  122  cat genes.txt
+  123  head genes.txt
+  124  tail genes.txt
+  125  grep -c high genes.txt
+  126  grep high genes.txt > high_genes.txt
+  127  cat high_genes.txt
+  128  grep low genes.txt > low_genes.txt
+  129  cat low_genes.txt
+  130  grep -c low genes.txt
+  131  cp genes.txt genes_copy.txt
+  132  mv genes_copy.txt ../results/
+  133  ls
+  134  ls -1
+  135  ls -l ..
+  136  mkdir ../results
+  137  mv genes_copy.txt ../results/
+  138  ls ../results
+  139  cd project
+  140  cd result
+  141  cd results
+  142  mkdir ../results
+  143  mv genes_copy.txt ../results/
+  144  ls ../results
+  145  mv genes_copy.txt ../results/
+  146  ls
+  147  cd ~/project/scripts
+  148  nano job.sh
+  149  chmod +x job.sh
+  150  ./job.sh
+  151  sbatch job.sh
+  152  ./job.sh &
+  153  cd ~/project
+  154  mkdir day8_project
+  155  cd day8_project
+  156  wget https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv
+  157  ls
+  158  head pima-indians-diabetes.data.csv
+  159  nano diabetes_with_header.csv
+  160  cat pima-indians-diabetes.data.csv >> diabetes_with_header.csv
+  161  head diabetes_with_header.csv
+  162  wc -l diabetes_with_header.csv
+  163  grep ',1$' diabetes_with_header.csv | wc -l
+  164  grep ',0$' diabetes_with_header.csv | wc -l
+  165  grep ',1$' diabetes_with_header.csv > diabetic_patients.csv
+  166  grep ',0$' diabetes_with_header.csv > non_diabetic_patients.csv
+  167  wc -l diabetic_patients.csv
+  168  wc -l non_diabetic_patients.csv
+  169  aws s3 cp diabetes_with_header.csv s3://adekunle-ec2-data/
+  170  aws s3 cp diabetic_patients.csv s3://adekunle-ec2-data/
+  171  aws s3 cp non_diabetic_patients.csv s3://adekunle-ec2-data/
+  172  nano analyze_diabetes.py
+  173  python3 analyze_diabetes.py
+  174  pip3 install pandas
+  175  sudo apt update
+  176  sudo apt install python3-pip -y
+  177  pip3 install pandas
+  178  sudo apt install python3-venv -y
+  179  python3 -m venv venv
+  180  source venv/bin/activate
+  181  pip install pandas
+  182  python analyze_diabetes.py
+  183  ls
+  184  python3 analyze_diabetes.py
+  185  mkdir data scripts results
+  186  mv diabetes_with_header.csv diabetic_patients.csv non_diabetic_patients.csv pima-indians-diabetes.data.csv data/
+  187  mv analyze_diabetes.py scripts/
+  188  mv outcome_counts.csv results/
+  189  ls
+  190  ls data
+  191  ls scripts
+  192  ls results
+  193  aws s3 cp data/ s3://adekunle-ec2-data/day8_project/data/ --recursive
+  194  aws s3 cp scripts/ s3://adekunle-ec2-data/day8_project/scripts/ --recursive
+  195  aws s3 cp results/ s3://adekunle-ec2-data/day8_project/results/ --recursive
+  196  aws s3 ls s3://adekunle-ec2-data/day8_project/ --recursive
+  197  history
+  198  history > commands_used.txt
+  199  cat commands_used.txt
+  200  nano workflow.sh
+  201  aws s3 cp commands_used.txt s3://adekunle-ec2-data/day8_project/
+  202  nano workflow.sh
+  203  chmod +x workflow.sh
+  204  ./workflow.sh
+  205  cd ~/project
+  206  nano requirements.txt
+  207  cd ~/project
+  208  mkdir rnaseq_cloud_pipeline
+  209  ls
+  210  cd rnaseq_cloud_pipeline
+  211  mkdir data metadata scripts results
+  212  ls
+  213  aws s3 cp s3://adekunle-ec2-data/Livercorn-flaxseed.csv data/
+  214  ls data
+  215  nano metadata/metadata.csv
+  216  cat metadata/metadata.csv
+  217  sudo apt update
+  218  sudo apt install r-base -y
+  219  R --version
+  220  install.packages("BiocManager")
+  221  BiocManager::install("DESeq2")
+  222  BiocManager::install("pheatmap")
+  223  R
+  224  cd ~/project/rnaseq_cloud_pipeline
+  225  R
+  226  sudo apt update
+  227  sudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev build-essential -y
+  228  rm -rf /home/ubuntu/R/x86_64-pc-linux-gnu-library/4.3/00LOCK*
+  229  R
+  230  cd ~/project/rnaseq_cloud_pipeline
+  231  R
+  232  cd ~/project/rnaseq_cloud_pipeline
+  233  R
+  234  ubuntu@ip-...$
+  235  rm -rf /home/ubuntu/R/x86_64-pc-linux-gnu-library/4.3/00LOCK*
+  236  R
+  237  nano scripts/rnaseq_deseq2_analysis.R
+  238  Rscript scripts/rnaseq_deseq2_analysis.R
+  239  ls results
+  240  wc -l results/significant_genes.csv
+  241  head results/deseq2_results.csv
+  242  aws s3 cp results/ s3://adekunle-ec2-data/rnaseq_cloud_pipeline/results/ --recursive
+  243  aws s3 cp scripts/ s3://adekunle-ec2-data/rnaseq_cloud_pipeline/scripts/ --recursive
+  244  aws s3 cp metadata/ s3://adekunle-ec2-data/rnaseq_cloud_pipeline/metadata/ --recursive
+  245  nano scripts/rnaseq_deseq2_analysis.R
+  246  Rscript scripts/rnaseq_deseq2_analysis.R
+  247  ls results
+  248  head results/deseq2_results.csv
+  249  aws s3 cp results/ s3://adekunle-ec2-data/rnaseq_cloud_pipeline/results/ --recursive
+  250  aws s3 cp scripts/ s3://adekunle-ec2-data/rnaseq_cloud_pipeline/scripts/ --recursive
+  251  aws s3 cp metadata/ s3://adekunle-ec2-data/rnaseq_cloud_pipeline/metadata/ --recursive
+  252  pwd
+  253  ls
+  254  ls results
+  255  history | tail -20
+  256  clear
+  257  pwd
+  258  tree
+  259  ls results
+  260  aws s3 ls s3://adekunle-ec2-data/rnaseq_cloud_pipeline/results/
+  261  sudo apt install tree -y
+  262  clear
+  263  pwd
+  264  tree
+  265  ls results
+  266  aws s3 ls s3://adekunle-ec2-data/rnaseq_cloud_pipeline/results/
+  267  history
+  268  history > commands_used.txt
+  269  aws s3 cp commands_used.txt s3://adekunle-ec2-data/rnaseq_cloud_pipeline/
+  270  mkdir README temp
+  271  ls
+  272  nano README.md
+  273  ```bash
+  274  nano requirements.txt
+  275  DESeq2
+  276  pheatmap
+  277  Bioconductor
+  278  git init
+  279  git add .
+  280  git commit -m "Cloud RNA-seq differential expression pipeline"
+  281  git branch -M main
+  282  git remote add origin https://github.com/Odunayo89/cloud-rnaseq-deseq2-pipeline.git
+  283  git push -u origin main
+  284  rm -rf README temp
+  285  rm -rf README temp
+  286  ls
+  287  nano requirements.txt
+  288  ls
+  289  git init
+  290  git add .
+  291  git commit -m "Cloud RNA-seq differential expression pipeline"
+  292  git branch -M main
+  293  git remote add origin https://github.com/Odunayo89/cloud-rnaseq-deseq2-pipeline.git
+  294  git push -u origin main
+  295  cd ~/project/rnaseq_cloud_pipeline
+  296  git push -u origin main
+  297  cd ~/project/rnaseq_cloud_pipeline
+  298  ..cd
+  299  cd..
+  300  cd ..
+  301  mkdir singlecell_liver_cloud
+  302  cd singlecell_liver_cloud
+  303  mkdir data scripts results figures
+  304  ls
+  305  aws s3 cp s3://adekunle-ec2-data/singlecell_liver_project/feca90bb-00df-4623-8398-1e3e6a90971d.h5ad data/
+  306  aws s3 ls s3://adekunle-ec2-data/
+  307  aws s3 cp s3://adekunle-ec2-data/singlecell_liver_project/feca90bb-00df-4623-8398-1e3e6a90971d.h5ad data/
+  308  aws s3 cp s3://adekunle-ec2-data/feca90bb-00df-4623-8398-1e3e6a90971d.h5ad data/
+  309  ls
+  310  ls -lh data
+  311  python3 -m venv scenv
+  312  source scenv/bin/activate
+  313  pip install scanpy anndata pandas matplotlib seaborn leidenalg igraph
+  314  cd ~/project
+  315  ls
+  316  cd ~singlecell_liver_cloud
+  317  cd ~/project/singlecell_liver_cloud
+  318  ls
+  319  pip install scanpy anndata pandas matplotlib seaborn leidenalg igraph
+  320  source scenv/bin/activate
+  321  pip install scanpy anndata pandas matplotlib seaborn leidenalg igraph
+  322  df -h
+  323  lsblk
+  324  pip install scanpy anndata pandas matplotlib seaborn leidenalg igraph
+  325  lsblk
+  326  sudo growpart /dev/nvme0n1 1
+  327  sudo resize2fs /dev/nvme0n1p1
+  328  df -h
+  329  pip install scanpy anndata pandas matplotlib seaborn leidenalg igraph
+  330  nano scripts/liver_scanpy_analysis.py
+  331  python scripts/liver_scanpy_analysis.py
+  332  nano scripts/liver_scanpy_analysis.py
+  333  python scripts/liver_scanpy_analysis.py
+  334  ls figures
+  335  aws s3 cp results/ s3://adekunle-ec2-data/singlecell_liver_cloud/results/ --recursive
+  336  aws s3 cp figures/ s3://adekunle-ec2-data/singlecell_liver_cloud/figures/ --recursive
+  337  aws s3 ls s3://adekunle-ec2-data/singlecell_liver_cloud/results/
+  338  aws s3 ls s3://adekunle-ec2-data/singlecell_liver_cloud/figures/
+  339  nano scripts/liver_scanpy_analysis.py
+  340  python scripts/liver_scanpy_analysis.py
+  341  ls results
+  342  ls figures
+  343  aws s3 cp results/ s3://adekunle-ec2-data/singlecell_liver_cloud/results/ --recursive
+  344  aws s3 cp figures/ s3://adekunle-ec2-data/singlecell_liver_cloud/figures/ --recursive
+  345  aws s3 cp scripts/ s3://adekunle-ec2-data/singlecell_liver_cloud/scripts/ --recursive
+  346  aws s3 ls s3://adekunle-ec2-data/singlecell_liver_cloud/ --recursive
+  347  history > command_history.txt
+  348  nano command_history.txt
+  349  mv command_history.txt results/
+  350  aws s3 cp results/ s3://adekunle-ec2-data/singlecell_liver_cloud/results/ --recursive
+  351  nano README.md
+  352  nano requirements.txt
+  353  git init
+  354  ls
+  355  nano .gitignore
+  356  git add .
+  357  git commit -m "Cloud-based single-cell liver RNA-seq analysis project"
+  358  git branch -M main
+  359  git remote add origin https://github.com/YOUR_USERNAME/singlecell-liver-cloud-analysis.git
+  360  git remote add origin https://github.com/Odunayo89/singlecell-liver-cloud-analysis.git
+  361  git remote remove origin
+  362  git remote add origin https://github.com/Odunayo89/singlecell-liver-cloud-analysis.git
+  363  git remote -v
+  364  git push -u origin main
+  365  history > workflow_commands.txt
